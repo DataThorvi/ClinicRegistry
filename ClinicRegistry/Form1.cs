@@ -27,14 +27,34 @@ namespace ClinicRegistry
             textSearch.TextChanged += TxtSearch_TextChanged;
             this.Load += Form1_Load;
 
-            пациентыToolStripMenuItem.Click += пациентыToolStripMenuItem_Click;
-            доктораToolStripMenuItem.Click += доктораToolStripMenuItem_Click;
-            услугиToolStripMenuItem.Click += услугиToolStripMenuItem_Click;
-            приёмыToolStripMenuItem.Click += приёмыToolStripMenuItem_Click;
-            медToolStripMenuItem.Click += медToolStripMenuItem_Click;
-            диспансерноеНаблюдениеToolStripMenuItem.Click += диспансерноеНаблюдениеToolStripMenuItem_Click;
+           
 
             dataGridView1.CellDoubleClick += dataGridView1_CellDoubleClick;
+        }
+
+        private void TabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (tabControl1.SelectedIndex)
+            {
+                case 0:
+                    LoadPatients();
+                    break;
+                case 1:
+                    LoadDoctors();
+                    break;
+                case 2:
+                    LoadServices();
+                    break;
+                case 3:
+                    LoadAppointments();
+                    break;
+                case 4:
+                    LoadMedicalRecords();
+                    break;
+                case 5:
+                    LoadDispensaryObservations();
+                    break;
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
